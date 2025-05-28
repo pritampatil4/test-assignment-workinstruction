@@ -10,7 +10,7 @@ export class BasePageLocators {
     return this.page.locator('input[name="email"]');
   }
 
-  get inputPassword(): Locator {  
+  get inputPassword(): Locator {
     return this.page.locator('input[name="password"]');
   }
 
