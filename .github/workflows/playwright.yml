@@ -18,6 +18,11 @@ jobs:
       run: npx playwright install chromium
     - name: Run Playwright tests
       run: npm run tests
+      env:
+        BASE_URL: ${{ secrets.BASE_URL }}
+        PLATFORM_USER_NAME: ${{ secrets.PLATFORM_USER_NAME }}
+        PLATFORM_USER_PASSWORD: ${{ secrets.PLATFORM_USER_PASSWORD }}
+        PLATFORM_RULES_PAGE: ${{ secrets.PLATFORM_RULES_PAGE }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
