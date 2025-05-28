@@ -9,7 +9,8 @@
       "rootDir": "./", 
       "outDir": "dist",
       "moduleResolution": "node",
-      "sourceMap": true
+      "sourceMap": true,
+      "typeRoots": ["./node_modules/@types", "./types"]
     },
     "include": ["./**/*"], 
     "exclude": ["node_modules"]
