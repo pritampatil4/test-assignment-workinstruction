@@ -1,0 +1,29 @@
+{
+  "name": "test-assignment-workinstruction",
+  "version": "1.0.0",
+  "description": "Automation tests for assignment type workinstruction",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "tests": "npx playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pritampatil4/test-assignment-workinstruction.git"
+  },
+  "keywords": [
+    "ui",
+    "tests"
+  ],
+  "author": "Pritam Patil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pritampatil4/test-assignment-workinstruction/issues"
+  },
+  "homepage": "https://github.com/pritampatil4/test-assignment-workinstruction#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.23",
+    "typescript": "^5.8.3"
+  }
+}
