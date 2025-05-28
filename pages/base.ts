@@ -13,8 +13,8 @@ export class BasePage {
 
   async loginToPlatform() {
     await this.page.goto('/login');
-    await this.locator.inputEmailId.fill(process.env.PLATFORM_USER_NAME!);
-    await this.locator.inputPassword.fill(process.env.PLATFORM_USER_PASSWORD!);
+    await this.locator.inputEmailId.fill(process.env.PLATFORM_USER_NAME);
+    await this.locator.inputPassword.fill(process.env.PLATFORM_USER_PASSWORD);
     await this.locator.buttonLogin.click();
   }
 }
