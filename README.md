@@ -17,6 +17,11 @@
     npx playwright install
     ```
 
+4.  **Add variables to env file:**
+    ```bash
+    Create a file named '.env' in the **root directory** of this project. Add 'BASE_URL', 'PLATFORM_RULES_PAGE', 'PLATFORM_USER_NAME', 'PLATFORM_USER_PASSWORD' variables. Please refer to '.env.example' file added,available in project.
+    ```
+
 ---
 
 ## How to Run Tests
