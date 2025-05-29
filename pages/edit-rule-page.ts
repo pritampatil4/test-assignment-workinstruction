@@ -1,4 +1,4 @@
-import { Page, expect } from "@playwright/test";
+import { Page, expect, Locator } from "@playwright/test";
 import { EditRulePageLocators } from "../locators/edit-rule-page-locators";
 
 export class EditRulePage {
@@ -10,78 +10,83 @@ export class EditRulePage {
     this.locator = new EditRulePageLocators(page);
   }
 
-  async verifyDatasourceSectionVisibility() {
-    await expect(this.locator.labelDataSource).toBeVisible();
-  }
-
-  async verifyConditionsSectionVisibility() {
-    await expect(this.locator.labelConditions).toBeVisible();
-  }
-
   async clickDatasourceContinueButton() {
-    await this.verifyDatasourceSectionVisibility();
+   await this.verifyLocatorVisibility(this.locator.labelDataSource);
     await this.locator.buttonContinue.click();
   }
 
   async clickConditionsContinueButton() {
-    await this.verifyConditionsSectionVisibility();
+    await this.verifyLocatorVisibility(this.locator.labelConditions);
     await this.locator.buttonContinue.click();
   }
 
-  async verifyAssignmentTypeWorkInstructionVisibility() {
-    expect(await this.locator.labelAssignmentType.isVisible());
-    expect(await this.locator.labelWorkInstruction.isVisible());
+
+  async verifyAssignmentTypeVisibility() {
+    await this.verifyLocatorVisibility(this.locator.labelAssignmentType);
+  }
+
+  async verifyWorkInstructionVisibility() {
+    await this.verifyLocatorVisibility(this.locator.labelWorkInstruction);
+  }
+
+  async verifyLocatorVisibility(locator: Locator) {
+    await expect(locator).toBeVisible();
+  }
+
+  async verifyLabelAndText(labelLocator: Locator, expectedText: string) {
+    await expect(labelLocator).toBeVisible();
+    await expect(labelLocator).toHaveText(expectedText);
   }
 
   async verifyWorkInstructionLabel() {
-    expect(await this.locator.labelWorkInstruction.isVisible());
+    await this.verifyLabelAndText(this.locator.labelWorkInstruction, "Workinstruction*");
   }
 
   async verifyTaskHeadlineLabel() {
-    expect(await this.locator.labelTaskHeadline.isVisible());
+    await this.verifyLabelAndText(this.locator.labelTaskHeadline, "Headline*");
   }
 
   async verifyTaskTitleLabel() {
-    expect(await this.locator.labelTaskTitle.isVisible());
+    await this.verifyLabelAndText(this.locator.labelTaskTitle, "Title*");
   }
 
   async verifyTaskDescriptionLabel() {
-    expect(await this.locator.labelTaskDescription.isVisible());
+    await this.verifyLabelAndText(this.locator.labelTaskDescription, "Description");
   }
 
   async verifyTaskPriorityLabel() {
-    expect(await this.locator.labelTaskPriority.isVisible());
+    await this.verifyLabelAndText(this.locator.labelTaskPriority, "Priority");
   }
 
   async verifyReasonsAbortLabel() {
-    expect(await this.locator.labelReasonsAbort.isVisible());
+    await this.verifyLabelAndText(this.locator.labelReasonsAbort, "Reasons to abort");
   }
 
   async verifyAnnouncementTypeLabel() {
-    expect(await this.locator.labelAnnoucementType.isVisible());
+    await this.verifyLabelAndText(this.locator.labelAnnoucementType, "Announcement type");
   }
 
   async verifyNotificationTypeLabel() {
-    expect(await this.locator.labelNotificationType.isVisible());
+    await this.verifyLabelAndText(this.locator.labelNotificationType, "Notification type");
   }
 
   async verifyRecipientsTypeLabel() {
-    expect(await this.locator.labelRecipientsType.isVisible());
+    await this.verifyLabelAndText(this.locator.labelRecipientsType, "Recipient type");
   }
 
   async verifyRecipientTypeRolesLabel() {
-    expect(await this.locator.labelRecipientTypeRoles.isVisible());
+    await this.verifyLabelAndText(this.locator.labelRecipientTypeRoles, "Roles");
   }
 
   async verifyRecipientTypeUserLabel() {
-    expect(await this.locator.labelRecipientTypeUser.isVisible());
+    await this.verifyLabelAndText(this.locator.labelRecipientTypeUser, "User");
   }
 
   async verifyRecipientTypeCallerLabel() {
-    expect(await this.locator.labelRecipientTypeCaller.isVisible());
+    await this.verifyLabelAndText(this.locator.labelRecipientTypeCaller, "Caller");
   }
 
   async verifyRecipientTypeVariablesLabel() {
-    expect(await this.locator.labelRecipientTypeVariables.isVisible());
+    await this.verifyLabelAndText(this.locator.labelRecipientTypeVariables, "Variables");
   }
 }

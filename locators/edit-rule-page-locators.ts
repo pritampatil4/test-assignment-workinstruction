@@ -20,7 +20,7 @@ export class EditRulePageLocators {
   }
 
   get labelAssignmentType(): Locator {
-    return this.page.locator('//h2[text()="Assignment"]');
+    return this.page.locator('//span[text()="Assignment"]');
   }
 
   get labelWorkInstruction(): Locator {
@@ -60,7 +60,7 @@ export class EditRulePageLocators {
   }
 
   get labelRecipientTypeRoles(): Locator {
-    return this.page.getByRole("radio", { name: "Roles" });
+    return this.page.locator('input#roles + label');
   }
 
   get labelRecipientTypeUser(): Locator {
@@ -72,10 +72,7 @@ export class EditRulePageLocators {
   }
 
   get labelRecipientTypeVariables(): Locator {
-    return this.page.getByRole("radio", { name: "Variables" });
+    return this.page.locator("//div[contains(@class, 'SegmentedControl-module__inputContainer___nL8z6') and .//span[text()='Recipient type']]//label[text()='Variables']");
   }
 
-  get tabRoles(): Locator {
-    return this.page.locator("input#roles + label");
-  }
 }

@@ -1,7 +1,6 @@
 import { test, expect, Page } from "@playwright/test";
 import { BasePage } from "../pages/base-page";
 import { EditRulePage } from "../pages/edit-rule-page";
-import { EditRulePageLocators } from "../locators/edit-rule-page-locators";
 
 test.describe("Verify Assignment type WorkInstruction has expected labels", () => {
   let basePage: BasePage;

@@ -32,6 +32,7 @@ export class BasePage {
     await this.navigateToEditRulesPage();
     await this.editRulePage.clickDatasourceContinueButton();
     await this.editRulePage.clickConditionsContinueButton();
-    await this.editRulePage.verifyAssignmentTypeWorkInstructionVisibility();
+    await this.editRulePage.verifyAssignmentTypeVisibility();
+    await this.editRulePage.verifyWorkInstructionVisibility();
   }
 }
