@@ -74,5 +74,4 @@ export class EditRulePageLocators {
   get labelRecipientTypeVariables(): Locator {
     return this.page.locator("//div[contains(@class, 'SegmentedControl-module__inputContainer___nL8z6') and .//span[text()='Recipient type']]//label[text()='Variables']");
   }
-
 }

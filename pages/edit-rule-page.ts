@@ -20,7 +20,6 @@ export class EditRulePage {
     await this.locator.buttonContinue.click();
   }
 
-
   async verifyAssignmentTypeVisibility() {
     await this.verifyLocatorVisibility(this.locator.labelAssignmentType);
   }
